@@ -15,7 +15,11 @@
             :class="{ active: viewMode === mode }"
             @click="viewMode = mode"
           >
+<<<<<<< HEAD
             {{ { graph: $t('main.layoutGraph'), split: $t('main.layoutSplit'), workbench: $t('main.layoutWorkbench') }[mode] }}
+=======
+            {{ { graph: 'Graph', split: 'Split', workbench: 'Workbench' }[mode] }}
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </button>
         </div>
       </div>
@@ -96,7 +100,11 @@ const viewMode = ref('split') // graph | split | workbench
 
 // Step State
 const currentStep = ref(1) // 1: 图谱构建, 2: 环境搭建, 3: 开始模拟, 4: 报告生成, 5: 深度互动
+<<<<<<< HEAD
 const stepNames = computed(() => tm('main.stepNames'))
+=======
+const stepNames = ['Graph Build', 'Env Setup', 'Simulation', 'Report', 'Interaction']
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
 
 // Data State
 const currentProjectId = ref(route.params.projectId)

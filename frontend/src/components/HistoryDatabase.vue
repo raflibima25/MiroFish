@@ -13,7 +13,11 @@
     <!-- 标题区域 -->
     <div class="section-header">
       <div class="section-line"></div>
+<<<<<<< HEAD
       <span class="section-title">{{ $t('history.title') }}</span>
+=======
+      <span class="section-title">Simulation History</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       <div class="section-line"></div>
     </div>
 
@@ -36,16 +40,28 @@
             <span 
               class="status-icon" 
               :class="{ available: project.project_id, unavailable: !project.project_id }"
+<<<<<<< HEAD
               :title="$t('history.graphBuild')"
             >◇</span>
             <span 
               class="status-icon available" 
               :title="$t('history.envSetup')"
+=======
+              title="Graph Build"
+            >◇</span>
+            <span
+              class="status-icon available"
+              title="Env Setup"
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             >◈</span>
-            <span 
-              class="status-icon" 
+            <span
+              class="status-icon"
               :class="{ available: project.report_id, unavailable: !project.report_id }"
+<<<<<<< HEAD
               :title="$t('history.analysisReport')"
+=======
+              title="Analysis Report"
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             >◆</span>
           </div>
         </div>
@@ -67,13 +83,21 @@
             </div>
             <!-- 如果有更多文件，显示提示 -->
             <div v-if="project.files.length > 3" class="files-more">
+<<<<<<< HEAD
               {{ $t('history.moreFiles', { count: project.files.length - 3 }) }}
+=======
+              +{{ project.files.length - 3 }} more
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
           </div>
           <!-- 无文件时的占位 -->
           <div class="files-empty" v-else>
             <span class="empty-file-icon">◇</span>
+<<<<<<< HEAD
             <span class="empty-file-text">{{ $t('history.noFiles') }}</span>
+=======
+            <span class="empty-file-text">No files</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
 
@@ -102,7 +126,11 @@
     <!-- 加载状态 -->
     <div v-if="loading" class="loading-state">
       <span class="loading-spinner"></span>
+<<<<<<< HEAD
       <span class="loading-text">{{ $t('history.loadingText') }}</span>
+=======
+      <span class="loading-text">Loading...</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     </div>
 
     <!-- 历史回放详情弹窗 -->
@@ -126,27 +154,44 @@
             <div class="modal-body">
               <!-- 模拟需求 -->
               <div class="modal-section">
+<<<<<<< HEAD
                 <div class="modal-label">{{ $t('history.simRequirement') }}</div>
                 <div class="modal-requirement">{{ selectedProject.simulation_requirement || $t('common.none') }}</div>
+=======
+                <div class="modal-label">Simulation Requirement</div>
+                <div class="modal-requirement">{{ selectedProject.simulation_requirement || 'None' }}</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
 
               <!-- 文件列表 -->
               <div class="modal-section">
+<<<<<<< HEAD
                 <div class="modal-label">{{ $t('history.relatedFiles') }}</div>
+=======
+                <div class="modal-label">Associated Files</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 <div class="modal-files" v-if="selectedProject.files && selectedProject.files.length > 0">
                   <div v-for="(file, index) in selectedProject.files" :key="index" class="modal-file-item">
                     <span class="file-tag" :class="getFileType(file.filename)">{{ getFileTypeLabel(file.filename) }}</span>
                     <span class="modal-file-name">{{ file.filename }}</span>
                   </div>
                 </div>
+<<<<<<< HEAD
                 <div class="modal-empty" v-else>{{ $t('history.noRelatedFiles') }}</div>
+=======
+                <div class="modal-empty" v-else>No associated files</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
             </div>
 
             <!-- 推演回放分割线 -->
             <div class="modal-divider">
               <span class="divider-line"></span>
+<<<<<<< HEAD
               <span class="divider-text">{{ $t('history.replayTitle') }}</span>
+=======
+              <span class="divider-text">Simulation Playback</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               <span class="divider-line"></span>
             </div>
 
@@ -159,29 +204,45 @@
               >
                 <span class="btn-step">Step1</span>
                 <span class="btn-icon">◇</span>
+<<<<<<< HEAD
                 <span class="btn-text">{{ $t('history.step1Button') }}</span>
+=======
+                <span class="btn-text">Graph Build</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </button>
-              <button 
-                class="modal-btn btn-simulation" 
+              <button
+                class="modal-btn btn-simulation"
                 @click="goToSimulation"
               >
                 <span class="btn-step">Step2</span>
                 <span class="btn-icon">◈</span>
+<<<<<<< HEAD
                 <span class="btn-text">{{ $t('history.step2Button') }}</span>
+=======
+                <span class="btn-text">Env Setup</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </button>
-              <button 
-                class="modal-btn btn-report" 
+              <button
+                class="modal-btn btn-report"
                 @click="goToReport"
                 :disabled="!selectedProject.report_id"
               >
                 <span class="btn-step">Step4</span>
                 <span class="btn-icon">◆</span>
+<<<<<<< HEAD
                 <span class="btn-text">{{ $t('history.step4Button') }}</span>
+=======
+                <span class="btn-text">Analysis Report</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </button>
             </div>
             <!-- 不可回放提示 -->
             <div class="modal-playback-hint">
+<<<<<<< HEAD
               <span class="hint-text">{{ $t('history.replayHint') }}</span>
+=======
+              <span class="hint-text">Step3 "Simulation" and Step5 "Interaction" must be started from a live session and do not support playback.</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
           </div>
         </div>
@@ -339,7 +400,11 @@ const truncateText = (text, maxLength) => {
 
 // 从模拟需求生成标题（取前20字）
 const getSimulationTitle = (requirement) => {
+<<<<<<< HEAD
   if (!requirement) return t('history.untitledSimulation')
+=======
+  if (!requirement) return 'Unnamed Simulation'
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   const title = requirement.slice(0, 20)
   return requirement.length > 20 ? title + '...' : title
 }
@@ -355,8 +420,13 @@ const formatSimulationId = (simulationId) => {
 const formatRounds = (simulation) => {
   const current = simulation.current_round || 0
   const total = simulation.total_rounds || 0
+<<<<<<< HEAD
   if (total === 0) return t('history.notStarted')
   return t('history.roundsProgress', { current, total })
+=======
+  if (total === 0) return 'Not started'
+  return `${current}/${total} rounds`
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
 }
 
 // 获取文件类型（用于样式）
@@ -384,7 +454,11 @@ const getFileTypeLabel = (filename) => {
 
 // 截断文件名（保留扩展名）
 const truncateFilename = (filename, maxLength) => {
+<<<<<<< HEAD
   if (!filename) return t('history.unknownFile')
+=======
+  if (!filename) return 'Unknown file'
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   if (filename.length <= maxLength) return filename
   
   const ext = filename.includes('.') ? '.' + filename.split('.').pop() : ''

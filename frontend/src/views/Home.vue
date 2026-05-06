@@ -6,7 +6,11 @@
       <div class="nav-links">
         <LanguageSwitcher />
         <a href="https://github.com/666ghj/MiroFish" target="_blank" class="github-link">
+<<<<<<< HEAD
           {{ $t('nav.visitGithub') }} <span class="arrow">↗</span>
+=======
+          Visit our GitHub <span class="arrow">↗</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         </a>
       </div>
     </nav>
@@ -16,6 +20,7 @@
       <section class="hero-section">
         <div class="hero-left">
           <div class="tag-row">
+<<<<<<< HEAD
             <span class="orange-tag">{{ $t('home.tagline') }}</span>
             <span class="version-text">{{ $t('home.version') }}</span>
           </div>
@@ -23,10 +28,20 @@
           <h1 class="main-title">
             {{ $t('home.heroTitle1') }}<br>
             <span class="gradient-text">{{ $t('home.heroTitle2') }}</span>
-          </h1>
+=======
+            <span class="orange-tag">Lightweight Swarm Intelligence Engine</span>
+            <span class="version-text">/ v0.1-Preview</span>
+          </div>
           
-          <div class="hero-desc">
+          <h1 class=”main-title”>
+            Upload Any Report<br>
+            <span class=”gradient-text”>Simulate the Future</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
+          </h1>
+
+          <div class=”hero-desc”>
             <p>
+<<<<<<< HEAD
               <i18n-t keypath="home.heroDesc" tag="span">
                 <template #brand><span class="highlight-bold">{{ $t('home.heroDescBrand') }}</span></template>
                 <template #agentScale><span class="highlight-orange">{{ $t('home.heroDescAgentScale') }}</span></template>
@@ -35,6 +50,12 @@
             </p>
             <p class="slogan-text">
               {{ $t('home.slogan') }}<span class="blinking-cursor">_</span>
+=======
+              Even from a single paragraph, <span class=”highlight-bold”>MiroFish</span> can automatically construct a parallel world of up to <span class=”highlight-orange”>1M+ Agents</span> based on its reality seeds. Inject variables from a god's-eye view to find the <span class=”highlight-code”>”local optimum”</span> through complex group interactions.
+            </p>
+            <p class=”slogan-text”>
+              Let the future play out among Agents — let decisions emerge battle-tested<span class=”blinking-cursor”>_</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </p>
           </div>
            
@@ -58,65 +79,112 @@
         <!-- 左栏：状态与步骤 -->
         <div class="left-panel">
           <div class="panel-header">
+<<<<<<< HEAD
             <span class="status-dot">■</span> {{ $t('home.systemStatus') }}
           </div>
           
           <h2 class="section-title">{{ $t('home.systemReady') }}</h2>
           <p class="section-desc">
             {{ $t('home.systemReadyDesc') }}
+=======
+            <span class="status-dot">■</span> System Status
+          </div>
+
+          <h2 class="section-title">Ready</h2>
+          <p class="section-desc">
+            Prediction engine on standby. Upload unstructured data to initialize simulation sequences.
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </p>
-          
-          <!-- 数据指标卡片 -->
+
+          <!-- Metric Cards -->
           <div class="metrics-row">
             <div class="metric-card">
+<<<<<<< HEAD
               <div class="metric-value">{{ $t('home.metricLowCost') }}</div>
               <div class="metric-label">{{ $t('home.metricLowCostDesc') }}</div>
             </div>
             <div class="metric-card">
               <div class="metric-value">{{ $t('home.metricHighAvail') }}</div>
               <div class="metric-label">{{ $t('home.metricHighAvailDesc') }}</div>
+=======
+              <div class="metric-value">Low Cost</div>
+              <div class="metric-label">~$5 per typical simulation</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">Scalable</div>
+              <div class="metric-label">Up to 1M+ Agent simulation</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
           </div>
 
           <!-- 项目模拟步骤介绍 (新增区域) -->
           <div class="steps-container">
             <div class="steps-header">
+<<<<<<< HEAD
                <span class="diamond-icon">◇</span> {{ $t('home.workflowSequence') }}
+=======
+               <span class="diamond-icon">◇</span> Workflow Sequence
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
             <div class="workflow-list">
               <div class="workflow-item">
                 <span class="step-num">01</span>
                 <div class="step-info">
+<<<<<<< HEAD
                   <div class="step-title">{{ $t('home.step01Title') }}</div>
                   <div class="step-desc">{{ $t('home.step01Desc') }}</div>
+=======
+                  <div class="step-title">Graph Build</div>
+                  <div class="step-desc">Reality seed extraction & individual/group memory injection & GraphRAG construction</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 </div>
               </div>
               <div class="workflow-item">
                 <span class="step-num">02</span>
                 <div class="step-info">
+<<<<<<< HEAD
                   <div class="step-title">{{ $t('home.step02Title') }}</div>
                   <div class="step-desc">{{ $t('home.step02Desc') }}</div>
+=======
+                  <div class="step-title">Env Setup</div>
+                  <div class="step-desc">Entity-relation extraction & agent persona generation & environment configuration</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 </div>
               </div>
               <div class="workflow-item">
                 <span class="step-num">03</span>
                 <div class="step-info">
+<<<<<<< HEAD
                   <div class="step-title">{{ $t('home.step03Title') }}</div>
                   <div class="step-desc">{{ $t('home.step03Desc') }}</div>
+=======
+                  <div class="step-title">Run Simulation</div>
+                  <div class="step-desc">Dual-platform parallel simulation & auto prediction parsing & dynamic memory updates</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 </div>
               </div>
               <div class="workflow-item">
                 <span class="step-num">04</span>
                 <div class="step-info">
+<<<<<<< HEAD
                   <div class="step-title">{{ $t('home.step04Title') }}</div>
                   <div class="step-desc">{{ $t('home.step04Desc') }}</div>
+=======
+                  <div class="step-title">Report</div>
+                  <div class="step-desc">ReportAgent uses rich toolset to deeply interact with the post-simulation environment</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 </div>
               </div>
               <div class="workflow-item">
                 <span class="step-num">05</span>
                 <div class="step-info">
+<<<<<<< HEAD
                   <div class="step-title">{{ $t('home.step05Title') }}</div>
                   <div class="step-desc">{{ $t('home.step05Desc') }}</div>
+=======
+                  <div class="step-title">Deep Interaction</div>
+                  <div class="step-desc">Chat with any agent in the simulated world & interact with ReportAgent</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 </div>
               </div>
             </div>
@@ -129,8 +197,13 @@
             <!-- 上传区域 -->
             <div class="console-section">
               <div class="console-header">
+<<<<<<< HEAD
                 <span class="console-label">{{ $t('home.realitySeed') }}</span>
                 <span class="console-meta">{{ $t('home.supportedFormats') }}</span>
+=======
+                <span class="console-label">01 / Reality Seed</span>
+                <span class="console-meta">Supported: PDF, MD, TXT</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               
               <div 
@@ -153,8 +226,13 @@
                 
                 <div v-if="files.length === 0" class="upload-placeholder">
                   <div class="upload-icon">↑</div>
+<<<<<<< HEAD
                   <div class="upload-title">{{ $t('home.dragToUpload') }}</div>
                   <div class="upload-hint">{{ $t('home.orBrowse') }}</div>
+=======
+                  <div class="upload-title">Drag & Drop to Upload</div>
+                  <div class="upload-hint">or click to browse files</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 </div>
                 
                 <div v-else class="file-list">
@@ -169,23 +247,39 @@
 
             <!-- 分割线 -->
             <div class="console-divider">
+<<<<<<< HEAD
               <span>{{ $t('home.inputParams') }}</span>
+=======
+              <span>Input Parameters</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
 
             <!-- 输入区域 -->
             <div class="console-section">
               <div class="console-header">
+<<<<<<< HEAD
                 <span class="console-label">{{ $t('home.simulationPrompt') }}</span>
+=======
+                <span class="console-label">>_ 02 / Simulation Prompt</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               <div class="input-wrapper">
                 <textarea
                   v-model="formData.simulationRequirement"
                   class="code-input"
+<<<<<<< HEAD
                   :placeholder="$t('home.promptPlaceholder')"
                   rows="6"
                   :disabled="loading"
                 ></textarea>
                 <div class="model-badge">{{ $t('home.engineBadge') }}</div>
+=======
+                  placeholder="// Describe your simulation or prediction goal in natural language (e.g. If University X issues a policy reversal, what public opinion shifts would follow?)"
+                  rows="6"
+                  :disabled="loading"
+                ></textarea>
+                <div class="model-badge">Engine: MiroFish-V1.0</div>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
             </div>
 
@@ -196,8 +290,13 @@
                 @click="startSimulation"
                 :disabled="!canSubmit || loading"
               >
+<<<<<<< HEAD
                 <span v-if="!loading">{{ $t('home.startEngine') }}</span>
                 <span v-else>{{ $t('home.initializing') }}</span>
+=======
+                <span v-if="!loading">Launch Engine</span>
+                <span v-else>Initializing...</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 <span class="btn-arrow">→</span>
               </button>
             </div>
