@@ -6,25 +6,42 @@
         <div class="card-header">
           <div class="step-info">
             <span class="step-num">01</span>
+<<<<<<< HEAD
             <span class="step-title">{{ $t('step1.ontologyGeneration') }}</span>
           </div>
           <div class="step-status">
             <span v-if="currentPhase > 0" class="badge success">{{ $t('step1.ontologyCompleted') }}</span>
             <span v-else-if="currentPhase === 0" class="badge processing">{{ $t('step1.ontologyGenerating') }}</span>
             <span v-else class="badge pending">{{ $t('step1.ontologyPending') }}</span>
+=======
+            <span class="step-title">Ontology Generation</span>
+          </div>
+          <div class="step-status">
+            <span v-if="currentPhase > 0" class="badge success">Completed</span>
+            <span v-else-if="currentPhase === 0" class="badge processing">Generating</span>
+            <span v-else class="badge pending">Pending</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
         
         <div class="card-content">
           <p class="api-note">POST /api/graph/ontology/generate</p>
           <p class="description">
+<<<<<<< HEAD
             {{ $t('step1.ontologyDesc') }}
+=======
+            LLM analyzes document content and simulation requirements, extracts reality seeds, and auto-generates a suitable ontology structure.
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </p>
 
           <!-- Loading / Progress -->
           <div v-if="currentPhase === 0 && ontologyProgress" class="progress-section">
             <div class="spinner-sm"></div>
+<<<<<<< HEAD
             <span>{{ ontologyProgress.message || $t('step1.analyzingDocs') }}</span>
+=======
+            <span>{{ ontologyProgress.message || 'Analyzing documents...' }}</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
 
           <!-- Detail Overlay -->
@@ -110,25 +127,39 @@
         <div class="card-header">
           <div class="step-info">
             <span class="step-num">02</span>
+<<<<<<< HEAD
             <span class="step-title">{{ $t('step1.graphRagBuild') }}</span>
           </div>
           <div class="step-status">
             <span v-if="currentPhase > 1" class="badge success">{{ $t('step1.ontologyCompleted') }}</span>
             <span v-else-if="currentPhase === 1" class="badge processing">{{ buildProgress?.progress || 0 }}%</span>
             <span v-else class="badge pending">{{ $t('step1.ontologyPending') }}</span>
+=======
+            <span class="step-title">GraphRAG Build</span>
+          </div>
+          <div class="step-status">
+            <span v-if="currentPhase > 1" class="badge success">Completed</span>
+            <span v-else-if="currentPhase === 1" class="badge processing">{{ buildProgress?.progress || 0 }}%</span>
+            <span v-else class="badge pending">Pending</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
 
         <div class="card-content">
           <p class="api-note">POST /api/graph/build</p>
           <p class="description">
+<<<<<<< HEAD
             {{ $t('step1.graphRagDesc') }}
+=======
+            Using the generated ontology, documents are chunked and processed via Zep to build a knowledge graph, extracting entities and relations, forming temporal memories and community summaries.
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </p>
           
           <!-- Stats Cards -->
           <div class="stats-grid">
             <div class="stat-card">
               <span class="stat-value">{{ graphStats.nodes }}</span>
+<<<<<<< HEAD
               <span class="stat-label">{{ $t('step1.entityNodes') }}</span>
             </div>
             <div class="stat-card">
@@ -138,6 +169,17 @@
             <div class="stat-card">
               <span class="stat-value">{{ graphStats.types }}</span>
               <span class="stat-label">{{ $t('step1.schemaTypes') }}</span>
+=======
+              <span class="stat-label">Entity Nodes</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">{{ graphStats.edges }}</span>
+              <span class="stat-label">Relation Edges</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">{{ graphStats.types }}</span>
+              <span class="stat-label">Schema Types</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
           </div>
         </div>
@@ -148,23 +190,40 @@
         <div class="card-header">
           <div class="step-info">
             <span class="step-num">03</span>
+<<<<<<< HEAD
             <span class="step-title">{{ $t('step1.buildComplete') }}</span>
           </div>
           <div class="step-status">
             <span v-if="currentPhase >= 2" class="badge accent">{{ $t('step1.inProgress') }}</span>
+=======
+            <span class="step-title">Build Complete</span>
+          </div>
+          <div class="step-status">
+            <span v-if="currentPhase >= 2" class="badge accent">In Progress</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
         
         <div class="card-content">
           <p class="api-note">POST /api/simulation/create</p>
+<<<<<<< HEAD
           <p class="description">{{ $t('step1.buildCompleteDesc') }}</p>
           <button 
             class="action-btn" 
+=======
+          <p class="description">Graph build complete. Proceed to set up the simulation environment.</p>
+          <button
+            class="action-btn"
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             :disabled="currentPhase < 2 || creatingSimulation"
             @click="handleEnterEnvSetup"
           >
             <span v-if="creatingSimulation" class="spinner-sm"></span>
+<<<<<<< HEAD
             {{ creatingSimulation ? $t('step1.creating') : $t('step1.enterEnvSetup') + ' ➝' }}
+=======
+            {{ creatingSimulation ? 'Creating...' : 'Enter Env Setup ➝' }}
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </button>
         </div>
       </div>
@@ -235,11 +294,19 @@ const handleEnterEnvSetup = async () => {
       })
     } else {
       console.error('创建模拟失败:', res.error)
+<<<<<<< HEAD
       alert(t('step1.createSimulationFailed', { error: res.error || t('common.unknownError') }))
     }
   } catch (err) {
     console.error('创建模拟异常:', err)
     alert(t('step1.createSimulationException', { error: err.message }))
+=======
+      alert('Failed to create simulation: ' + (res.error || 'Unknown error'))
+    }
+  } catch (err) {
+    console.error('创建模拟异常:', err)
+    alert('Simulation creation error: ' + err.message)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   } finally {
     creatingSimulation.value = false
   }

@@ -15,7 +15,11 @@
             :class="{ active: viewMode === mode }"
             @click="viewMode = mode"
           >
+<<<<<<< HEAD
             {{ { graph: $t('main.layoutGraph'), split: $t('main.layoutSplit'), workbench: $t('main.layoutWorkbench') }[mode] }}
+=======
+            {{ { graph: 'Graph', split: 'Split', workbench: 'Workbench' }[mode] }}
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </button>
         </div>
       </div>
@@ -25,7 +29,11 @@
         <div class="step-divider"></div>
         <div class="workflow-step">
           <span class="step-num">Step 3/5</span>
+<<<<<<< HEAD
           <span class="step-name">{{ $tm('main.stepNames')[2] }}</span>
+=======
+          <span class="step-name">Simulation</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         </div>
         <div class="step-divider"></div>
         <span class="status-indicator" :class="statusClass">
@@ -151,7 +159,11 @@ const toggleMaximize = (target) => {
 
 const handleGoBack = async () => {
   // 在返回 Step 2 之前，先关闭正在运行的模拟
+<<<<<<< HEAD
   addLog(t('log.preparingGoBack'))
+=======
+  addLog('Returning to Step 2, closing simulation...')
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   
   // 停止轮询
   stopGraphRefresh()
@@ -161,12 +173,17 @@ const handleGoBack = async () => {
     const envStatusRes = await getEnvStatus({ simulation_id: currentSimulationId.value })
     
     if (envStatusRes.success && envStatusRes.data?.env_alive) {
+<<<<<<< HEAD
       addLog(t('log.closingSimEnv'))
+=======
+      addLog('Closing simulation environment...')
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       try {
-        await closeSimulationEnv({ 
+        await closeSimulationEnv({
           simulation_id: currentSimulationId.value,
           timeout: 10
         })
+<<<<<<< HEAD
         addLog(t('log.simEnvClosed'))
       } catch (closeErr) {
         addLog(t('log.closeSimEnvFailed'))
@@ -175,22 +192,45 @@ const handleGoBack = async () => {
           addLog(t('log.simForceStopSuccess'))
         } catch (stopErr) {
           addLog(t('log.forceStopFailed', { error: stopErr.message }))
+=======
+        addLog('✓ Simulation environment closed')
+      } catch (closeErr) {
+        addLog('Failed to close environment, attempting force stop...')
+        try {
+          await stopSimulation({ simulation_id: currentSimulationId.value })
+          addLog('✓ Simulation force stopped')
+        } catch (stopErr) {
+          addLog(`Force stop failed: ${stopErr.message}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         }
       }
     } else {
       // 环境未运行，检查是否需要停止进程
       if (isSimulating.value) {
+<<<<<<< HEAD
         addLog(t('log.stoppingSimProcess'))
         try {
           await stopSimulation({ simulation_id: currentSimulationId.value })
           addLog(t('log.simStopped'))
         } catch (err) {
           addLog(t('log.stopSimFailed', { error: err.message }))
+=======
+        addLog('Stopping simulation process...')
+        try {
+          await stopSimulation({ simulation_id: currentSimulationId.value })
+          addLog('✓ Simulation stopped')
+        } catch (err) {
+          addLog(`Stop failed: ${err.message}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         }
       }
     }
   } catch (err) {
+<<<<<<< HEAD
     addLog(t('log.checkStatusFailed', { error: err.message }))
+=======
+    addLog(`Failed to check simulation status: ${err.message}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
   
   // 返回到 Step 2 (环境搭建)
@@ -200,13 +240,21 @@ const handleGoBack = async () => {
 const handleNextStep = () => {
   // Step3Simulation 组件会直接处理报告生成和路由跳转
   // 这个方法仅作为备用
+<<<<<<< HEAD
   addLog(t('log.enterStep4'))
+=======
+  addLog('Entering Step 4: Report generation')
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
 }
 
 // --- Data Logic ---
 const loadSimulationData = async () => {
   try {
+<<<<<<< HEAD
     addLog(t('log.loadingSimData', { id: currentSimulationId.value }))
+=======
+    addLog(`Loading simulation data: ${currentSimulationId.value}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     
     // 获取 simulation 信息
     const simRes = await getSimulation(currentSimulationId.value)
@@ -218,10 +266,17 @@ const loadSimulationData = async () => {
         const configRes = await getSimulationConfig(currentSimulationId.value)
         if (configRes.success && configRes.data?.time_config?.minutes_per_round) {
           minutesPerRound.value = configRes.data.time_config.minutes_per_round
+<<<<<<< HEAD
           addLog(t('log.timeConfig', { minutes: minutesPerRound.value }))
         }
       } catch (configErr) {
         addLog(t('log.timeConfigFetchFailed', { minutes: minutesPerRound.value }))
+=======
+          addLog(`Time config: ${minutesPerRound.value} min/round`)
+        }
+      } catch (configErr) {
+        addLog(`Failed to load time config, using default: ${minutesPerRound.value} min/round`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       }
       
       // 获取 project 信息
@@ -229,8 +284,13 @@ const loadSimulationData = async () => {
         const projRes = await getProject(simData.project_id)
         if (projRes.success && projRes.data) {
           projectData.value = projRes.data
+<<<<<<< HEAD
           addLog(t('log.projectLoadSuccess', { id: projRes.data.project_id }))
           
+=======
+          addLog(`Project loaded: ${projRes.data.project_id}`)
+
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           // 获取 graph 数据
           if (projRes.data.graph_id) {
             await loadGraph(projRes.data.graph_id)
@@ -238,10 +298,17 @@ const loadSimulationData = async () => {
         }
       }
     } else {
+<<<<<<< HEAD
       addLog(t('log.loadSimDataFailed', { error: simRes.error || t('common.unknownError') }))
     }
   } catch (err) {
     addLog(t('log.loadException', { error: err.message }))
+=======
+      addLog(`Failed to load simulation data: ${simRes.error || 'Unknown error'}`)
+    }
+  } catch (err) {
+    addLog(`Load error: ${err.message}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
 }
 
@@ -257,11 +324,19 @@ const loadGraph = async (graphId) => {
     if (res.success) {
       graphData.value = res.data
       if (!isSimulating.value) {
+<<<<<<< HEAD
         addLog(t('log.graphDataLoadSuccess'))
       }
     }
   } catch (err) {
     addLog(t('log.graphLoadFailed', { error: err.message }))
+=======
+        addLog('Graph data loaded')
+      }
+    }
+  } catch (err) {
+    addLog(`Graph load failed: ${err.message}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   } finally {
     graphLoading.value = false
   }
@@ -278,7 +353,11 @@ let graphRefreshTimer = null
 
 const startGraphRefresh = () => {
   if (graphRefreshTimer) return
+<<<<<<< HEAD
   addLog(t('log.graphRealtimeRefreshStart'))
+=======
+  addLog('Graph auto-refresh enabled (30s)')
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   // 立即刷新一次，然后每30秒刷新
   graphRefreshTimer = setInterval(refreshGraph, 30000)
 }
@@ -287,7 +366,11 @@ const stopGraphRefresh = () => {
   if (graphRefreshTimer) {
     clearInterval(graphRefreshTimer)
     graphRefreshTimer = null
+<<<<<<< HEAD
     addLog(t('log.graphRealtimeRefreshStop'))
+=======
+    addLog('Graph auto-refresh stopped')
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
 }
 
@@ -300,11 +383,19 @@ watch(isSimulating, (newValue) => {
 }, { immediate: true })
 
 onMounted(() => {
+<<<<<<< HEAD
   addLog(t('log.simRunViewInit'))
   
   // 记录 maxRounds 配置（值已在初始化时从 query 参数获取）
   if (maxRounds.value) {
     addLog(t('log.customRounds', { rounds: maxRounds.value }))
+=======
+  addLog('SimulationRunView initialized')
+
+  // 记录 maxRounds 配置（值已在初始化时从 query 参数获取）
+  if (maxRounds.value) {
+    addLog(`Custom max rounds: ${maxRounds.value}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
   
   loadSimulationData()

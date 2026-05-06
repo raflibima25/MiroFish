@@ -15,7 +15,11 @@
             :class="{ active: viewMode === mode }"
             @click="viewMode = mode"
           >
+<<<<<<< HEAD
             {{ { graph: $t('main.layoutGraph'), split: $t('main.layoutSplit'), workbench: $t('main.layoutWorkbench') }[mode] }}
+=======
+            {{ { graph: 'Graph', split: 'Split', workbench: 'Workbench' }[mode] }}
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </button>
         </div>
       </div>
@@ -25,7 +29,11 @@
         <div class="step-divider"></div>
         <div class="workflow-step">
           <span class="step-num">Step 4/5</span>
+<<<<<<< HEAD
           <span class="step-name">{{ $tm('main.stepNames')[3] }}</span>
+=======
+          <span class="step-name">Report</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         </div>
         <div class="step-divider"></div>
         <span class="status-indicator" :class="statusClass">
@@ -144,7 +152,11 @@ const toggleMaximize = (target) => {
 // --- Data Logic ---
 const loadReportData = async () => {
   try {
+<<<<<<< HEAD
     addLog(t('log.loadReportData', { id: currentReportId.value }))
+=======
+    addLog(`Loading report data: ${currentReportId.value}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
 
     // 获取 report 信息以获取 simulation_id
     const reportRes = await getReport(currentReportId.value)
@@ -163,7 +175,11 @@ const loadReportData = async () => {
             const projRes = await getProject(simData.project_id)
             if (projRes.success && projRes.data) {
               projectData.value = projRes.data
+<<<<<<< HEAD
               addLog(t('log.projectLoadSuccess', { id: projRes.data.project_id }))
+=======
+              addLog(`Project loaded: ${projRes.data.project_id}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
 
               // 获取 graph 数据
               if (projRes.data.graph_id) {
@@ -174,10 +190,17 @@ const loadReportData = async () => {
         }
       }
     } else {
+<<<<<<< HEAD
       addLog(t('log.getReportInfoFailed', { error: reportRes.error || t('common.unknownError') }))
     }
   } catch (err) {
     addLog(t('log.loadException', { error: err.message }))
+=======
+      addLog(`Failed to load report: ${reportRes.error || 'Unknown error'}`)
+    }
+  } catch (err) {
+    addLog(`Load error: ${err.message}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
 }
 
@@ -188,10 +211,17 @@ const loadGraph = async (graphId) => {
     const res = await getGraphData(graphId)
     if (res.success) {
       graphData.value = res.data
+<<<<<<< HEAD
       addLog(t('log.graphDataLoadSuccess'))
     }
   } catch (err) {
     addLog(t('log.graphLoadFailed', { error: err.message }))
+=======
+      addLog('Graph data loaded')
+    }
+  } catch (err) {
+    addLog(`Graph load failed: ${err.message}`)
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   } finally {
     graphLoading.value = false
   }
@@ -212,7 +242,11 @@ watch(() => route.params.reportId, (newId) => {
 }, { immediate: true })
 
 onMounted(() => {
+<<<<<<< HEAD
   addLog(t('log.reportViewInit'))
+=======
+  addLog('ReportView initialized')
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   loadReportData()
 })
 </script>

@@ -15,7 +15,11 @@
             :class="{ active: viewMode === mode }"
             @click="viewMode = mode"
           >
+<<<<<<< HEAD
             {{ { graph: $t('main.layoutGraph'), split: $t('main.layoutSplit'), workbench: $t('main.layoutWorkbench') }[mode] }}
+=======
+            {{ { graph: 'Graph', split: 'Split', workbench: 'Workbench' }[mode] }}
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </button>
         </div>
       </div>
@@ -25,7 +29,11 @@
         <div class="step-divider"></div>
         <div class="workflow-step">
           <span class="step-num">Step 2/5</span>
+<<<<<<< HEAD
           <span class="step-name">{{ $tm('main.stepNames')[1] }}</span>
+=======
+          <span class="step-name">Env Setup</span>
+>>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         </div>
         <div class="step-divider"></div>
         <span class="status-indicator" :class="statusClass">
