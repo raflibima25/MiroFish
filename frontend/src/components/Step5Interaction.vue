@@ -58,11 +58,7 @@
                       <path d="M12 2a10 10 0 0 1 10 10" stroke-width="4" stroke="#4B5563" stroke-linecap="round"></path>
                     </svg>
                   </div>
-<<<<<<< HEAD
                   <span class="loading-text">{{ $t('step4.generatingSection', { title: section.title }) }}</span>
-=======
-                  <span class="loading-text">Generating {{ section.title }}...</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 </div>
               </div>
             </div>
@@ -102,11 +98,7 @@
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
               </svg>
-<<<<<<< HEAD
               <span>{{ $t('step5.chatWithReportAgent') }}</span>
-=======
-              <span>Chat with Report Agent</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </button>
             <div class="agent-dropdown" v-if="profiles.length > 0">
               <button 
@@ -118,21 +110,13 @@
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
-<<<<<<< HEAD
                 <span>{{ selectedAgent ? selectedAgent.username : $t('step5.chatWithAgent') }}</span>
-=======
-                <span>{{ selectedAgent ? selectedAgent.username : 'Chat with any individual' }}</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 <svg class="dropdown-arrow" :class="{ open: showAgentDropdown }" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </button>
               <div v-if="showAgentDropdown" class="dropdown-menu">
-<<<<<<< HEAD
                 <div class="dropdown-header">{{ $t('step5.selectChatTarget') }}</div>
-=======
-                <div class="dropdown-header">Select conversation target</div>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 <div 
                   v-for="(agent, idx) in profiles" 
                   :key="idx"
@@ -142,11 +126,7 @@
                   <div class="agent-avatar">{{ (agent.username || 'A')[0] }}</div>
                   <div class="agent-info">
                     <span class="agent-name">{{ agent.username }}</span>
-<<<<<<< HEAD
                     <span class="agent-role">{{ agent.profession || $t('step2.unknownProfession') }}</span>
-=======
-                    <span class="agent-role">{{ agent.profession || 'Unknown profession' }}</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                 </div>
               </div>
@@ -161,11 +141,7 @@
                 <path d="M9 11l3 3L22 4"></path>
                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
               </svg>
-<<<<<<< HEAD
               <span>{{ $t('step5.sendSurvey') }}</span>
-=======
-              <span>Send Survey to World</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </button>
           </div>
         </div>
@@ -178,13 +154,8 @@
             <div class="tools-card-header">
               <div class="tools-card-avatar">R</div>
               <div class="tools-card-info">
-<<<<<<< HEAD
                 <div class="tools-card-name">{{ $t('step5.reportAgentChat') }}</div>
                 <div class="tools-card-subtitle">{{ $t('step5.reportAgentDesc') }}</div>
-=======
-                <div class="tools-card-name">Report Agent - Chat</div>
-                <div class="tools-card-subtitle">Quick chat with the report generation agent — supports 4 specialized tools with full MiroFish memory</div>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               <button class="tools-card-toggle" @click="showToolsDetail = !showToolsDetail">
                 <svg :class="{ 'is-expanded': showToolsDetail }" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
@@ -201,13 +172,8 @@
                     </svg>
                   </div>
                   <div class="tool-content">
-<<<<<<< HEAD
                     <div class="tool-name">{{ $t('step5.toolInsightForge') }}</div>
                     <div class="tool-desc">{{ $t('step5.toolInsightForgeDesc') }}</div>
-=======
-                    <div class="tool-name">InsightForge Deep Attribution</div>
-                    <div class="tool-desc">Aligns real-world seed data with simulation state. Uses Global/Local Memory for deep cross-temporal attribution analysis.</div>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                 </div>
                 <div class="tool-item tool-blue">
@@ -218,13 +184,8 @@
                     </svg>
                   </div>
                   <div class="tool-content">
-<<<<<<< HEAD
                     <div class="tool-name">{{ $t('step5.toolPanoramaSearch') }}</div>
                     <div class="tool-desc">{{ $t('step5.toolPanoramaSearchDesc') }}</div>
-=======
-                    <div class="tool-name">PanoramaSearch Panoramic Tracking</div>
-                    <div class="tool-desc">Graph-based breadth traversal that reconstructs event propagation paths and captures full information flow topology.</div>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                 </div>
                 <div class="tool-item tool-orange">
@@ -234,13 +195,8 @@
                     </svg>
                   </div>
                   <div class="tool-content">
-<<<<<<< HEAD
                     <div class="tool-name">{{ $t('step5.toolQuickSearch') }}</div>
                     <div class="tool-desc">{{ $t('step5.toolQuickSearchDesc') }}</div>
-=======
-                    <div class="tool-name">QuickSearch Fast Retrieval</div>
-                    <div class="tool-desc">GraphRAG-powered instant query interface optimized for rapidly extracting node attributes and discrete facts.</div>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                 </div>
                 <div class="tool-item tool-green">
@@ -252,13 +208,8 @@
                     </svg>
                   </div>
                   <div class="tool-content">
-<<<<<<< HEAD
                     <div class="tool-name">{{ $t('step5.toolInterviewSubAgent') }}</div>
                     <div class="tool-desc">{{ $t('step5.toolInterviewSubAgentDesc') }}</div>
-=======
-                    <div class="tool-name">InterviewSubAgent Virtual Interview</div>
-                    <div class="tool-desc">Autonomous interviewing agent that conducts parallel multi-round dialogues with simulated individuals to gather unstructured opinion data.</div>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                 </div>
               </div>
@@ -273,11 +224,7 @@
                 <div class="profile-card-name">{{ selectedAgent.username }}</div>
                 <div class="profile-card-meta">
                   <span v-if="selectedAgent.name" class="profile-card-handle">@{{ selectedAgent.name }}</span>
-<<<<<<< HEAD
                   <span class="profile-card-profession">{{ selectedAgent.profession || $t('step2.unknownProfession') }}</span>
-=======
-                  <span class="profile-card-profession">{{ selectedAgent.profession || 'Unknown profession' }}</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 </div>
               </div>
               <button class="profile-card-toggle" @click="showFullProfile = !showFullProfile">
@@ -288,11 +235,7 @@
             </div>
             <div v-if="showFullProfile && selectedAgent.bio" class="profile-card-body">
               <div class="profile-card-bio">
-<<<<<<< HEAD
                 <div class="profile-card-label">{{ $t('step5.profileBio') }}</div>
-=======
-                <div class="profile-card-label">Bio</div>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 <p>{{ selectedAgent.bio }}</p>
               </div>
             </div>
@@ -307,11 +250,7 @@
                 </svg>
               </div>
               <p class="empty-text">
-<<<<<<< HEAD
                 {{ chatTarget === 'report_agent' ? $t('step5.chatEmptyReportAgent') : $t('step5.chatEmptyAgent') }}
-=======
-                {{ chatTarget === 'report_agent' ? 'Chat with Report Agent to explore report insights' : 'Chat with a simulated individual to learn their perspective' }}
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </p>
             </div>
             <div 
@@ -353,11 +292,7 @@
             <textarea 
               v-model="chatInput"
               class="chat-input"
-<<<<<<< HEAD
               :placeholder="$t('step5.chatInputPlaceholder')"
-=======
-              placeholder="Type your question..."
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               @keydown.enter.exact.prevent="sendMessage"
               :disabled="isSending || (!selectedAgent && chatTarget === 'agent')"
               rows="1"
@@ -382,13 +317,8 @@
           <div class="survey-setup">
             <div class="setup-section">
               <div class="section-header">
-<<<<<<< HEAD
                 <span class="section-title">{{ $t('step5.selectSurveyTarget') }}</span>
                 <span class="selection-count">{{ $t('step5.selectedCount', { selected: selectedAgents.size, total: profiles.length }) }}</span>
-=======
-                <span class="section-title">Select Respondents</span>
-                <span class="selection-count">Selected {{ selectedAgents.size }} / {{ profiles.length }}</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               <div class="agents-grid">
                 <label 
@@ -405,11 +335,7 @@
                   <div class="checkbox-avatar">{{ (agent.username || 'A')[0] }}</div>
                   <div class="checkbox-info">
                     <span class="checkbox-name">{{ agent.username }}</span>
-<<<<<<< HEAD
                     <span class="checkbox-role">{{ agent.profession || $t('step2.unknownProfession') }}</span>
-=======
-                    <span class="checkbox-role">{{ agent.profession || 'Unknown profession' }}</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                   <div class="checkbox-indicator">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3">
@@ -419,34 +345,20 @@
                 </label>
               </div>
               <div class="selection-actions">
-<<<<<<< HEAD
                 <button class="action-link" @click="selectAllAgents">{{ $t('step5.selectAll') }}</button>
                 <span class="action-divider">|</span>
                 <button class="action-link" @click="clearAgentSelection">{{ $t('step5.clearSelection') }}</button>
-=======
-                <button class="action-link" @click="selectAllAgents">Select All</button>
-                <span class="action-divider">|</span>
-                <button class="action-link" @click="clearAgentSelection">Clear</button>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
             </div>
 
             <div class="setup-section">
               <div class="section-header">
-<<<<<<< HEAD
                 <span class="section-title">{{ $t('step5.surveyQuestions') }}</span>
-=======
-                <span class="section-title">Survey Question</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               <textarea 
                 v-model="surveyQuestion"
                 class="survey-input"
-<<<<<<< HEAD
                 :placeholder="$t('step5.surveyInputPlaceholder')"
-=======
-                placeholder="Enter your question for all selected respondents..."
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 rows="3"
               ></textarea>
             </div>
@@ -457,24 +369,15 @@
               @click="submitSurvey"
             >
               <span v-if="isSurveying" class="loading-spinner"></span>
-<<<<<<< HEAD
               <span v-else>{{ $t('step5.submitSurvey') }}</span>
-=======
-              <span v-else>Send Survey</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </button>
           </div>
 
           <!-- Survey Results -->
           <div v-if="surveyResults.length > 0" class="survey-results">
             <div class="results-header">
-<<<<<<< HEAD
               <span class="results-title">{{ $t('step5.surveyResults') }}</span>
               <span class="results-count">{{ $t('step5.surveyResultsCount', { count: surveyResults.length }) }}</span>
-=======
-              <span class="results-title">Survey Results</span>
-              <span class="results-count">{{ surveyResults.length }} responses</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
             <div class="results-list">
               <div 
@@ -486,11 +389,7 @@
                   <div class="result-avatar">{{ (result.agent_name || 'A')[0] }}</div>
                   <div class="result-info">
                     <span class="result-name">{{ result.agent_name }}</span>
-<<<<<<< HEAD
                     <span class="result-role">{{ result.profession || $t('step2.unknownProfession') }}</span>
-=======
-                    <span class="result-role">{{ result.profession || 'Unknown profession' }}</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                 </div>
                 <div class="result-question">
@@ -639,11 +538,7 @@ const selectAgent = (agent, idx) => {
   
   // 恢复该 Agent 的对话记录
   chatHistory.value = chatHistoryCache.value[`agent_${idx}`] || []
-<<<<<<< HEAD
   addLog(t('log.selectChatTarget', { name: agent.username }))
-=======
-  addLog(`Selected conversation target: ${agent.username}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
 }
 
 const formatTime = (timestamp) => {
@@ -770,17 +665,10 @@ const sendMessage = async () => {
       await sendToAgent(message)
     }
   } catch (err) {
-<<<<<<< HEAD
     addLog(t('log.sendFailed', { error: err.message }))
     chatHistory.value.push({
       role: 'assistant',
       content: t('step5.errorOccurred', { error: err.message }),
-=======
-    addLog(`Send failed: ${err.message}`)
-    chatHistory.value.push({
-      role: 'assistant',
-      content: `Sorry, an error occurred: ${err.message}`,
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       timestamp: new Date().toISOString()
     })
   } finally {
@@ -792,11 +680,7 @@ const sendMessage = async () => {
 }
 
 const sendToReportAgent = async (message) => {
-<<<<<<< HEAD
   addLog(t('log.sendToReportAgent', { message: message.substring(0, 50) }))
-=======
-  addLog(`Sending to Report Agent: ${message.substring(0, 50)}...`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   
   // Build chat history for API
   const historyForApi = chatHistory.value
@@ -816,37 +700,21 @@ const sendToReportAgent = async (message) => {
   if (res.success && res.data) {
     chatHistory.value.push({
       role: 'assistant',
-<<<<<<< HEAD
       content: res.data.response || res.data.answer || t('step5.noResponse'),
       timestamp: new Date().toISOString()
     })
     addLog(t('log.reportAgentReplied'))
   } else {
     throw new Error(res.error || t('step5.requestFailed'))
-=======
-      content: res.data.response || res.data.answer || 'No response',
-      timestamp: new Date().toISOString()
-    })
-    addLog('Report Agent replied')
-  } else {
-    throw new Error(res.error || 'Request failed')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
 }
 
 const sendToAgent = async (message) => {
   if (!selectedAgent.value || selectedAgentIndex.value === null) {
-<<<<<<< HEAD
     throw new Error(t('step5.selectAgentFirst'))
   }
   
   addLog(t('log.sendToAgent', { name: selectedAgent.value.username, message: message.substring(0, 50) }))
-=======
-    throw new Error('Please select a simulated individual first')
-  }
-  
-  addLog(`Sending to ${selectedAgent.value.username}: ${message.substring(0, 50)}...`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   
   // Build prompt with chat history
   let prompt = message
@@ -896,21 +764,12 @@ const sendToAgent = async (message) => {
         content: responseContent,
         timestamp: new Date().toISOString()
       })
-<<<<<<< HEAD
       addLog(t('log.agentReplied', { name: selectedAgent.value.username }))
     } else {
       throw new Error(t('step5.noResponse'))
     }
   } else {
     throw new Error(res.error || t('step5.requestFailed'))
-=======
-      addLog(`${selectedAgent.value.username} replied`)
-    } else {
-      throw new Error('No response data')
-    }
-  } else {
-    throw new Error(res.error || 'Request failed')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
 }
 
@@ -947,11 +806,7 @@ const submitSurvey = async () => {
   if (selectedAgents.value.size === 0 || !surveyQuestion.value.trim()) return
   
   isSurveying.value = true
-<<<<<<< HEAD
   addLog(t('log.sendSurvey', { count: selectedAgents.value.size }))
-=======
-  addLog(`Sending survey to ${selectedAgents.value.size} respondents...`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   
   try {
     const interviews = Array.from(selectedAgents.value).map(idx => ({
@@ -978,33 +833,20 @@ const submitSurvey = async () => {
         const agent = profiles.value[agentIdx]
         
         // 优先使用 reddit 平台回复，其次 twitter
-<<<<<<< HEAD
         let responseContent = t('step5.noResponse')
 
-=======
-        let responseContent = 'No response'
-        
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         if (typeof resultsDict === 'object' && !Array.isArray(resultsDict)) {
           const redditKey = `reddit_${agentIdx}`
           const twitterKey = `twitter_${agentIdx}`
           const agentResult = resultsDict[redditKey] || resultsDict[twitterKey]
           if (agentResult) {
-<<<<<<< HEAD
             responseContent = agentResult.response || agentResult.answer || t('step5.noResponse')
-=======
-            responseContent = agentResult.response || agentResult.answer || 'No response'
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           }
         } else if (Array.isArray(resultsDict)) {
           // 兼容数组格式
           const matchedResult = resultsDict.find(r => r.agent_id === agentIdx)
           if (matchedResult) {
-<<<<<<< HEAD
             responseContent = matchedResult.response || matchedResult.answer || t('step5.noResponse')
-=======
-            responseContent = matchedResult.response || matchedResult.answer || 'No response'
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           }
         }
         
@@ -1018,21 +860,12 @@ const submitSurvey = async () => {
       }
       
       surveyResults.value = surveyResultsList
-<<<<<<< HEAD
       addLog(t('log.receivedReplies', { count: surveyResults.value.length }))
     } else {
       throw new Error(res.error || t('step5.requestFailed'))
     }
   } catch (err) {
     addLog(t('log.surveySendFailed', { error: err.message }))
-=======
-      addLog(`Received ${surveyResults.value.length} responses`)
-    } else {
-      throw new Error(res.error || 'Request failed')
-    }
-  } catch (err) {
-    addLog(`Survey failed: ${err.message}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   } finally {
     isSurveying.value = false
   }
@@ -1043,11 +876,7 @@ const loadReportData = async () => {
   if (!props.reportId) return
   
   try {
-<<<<<<< HEAD
     addLog(t('log.loadReportData', { id: props.reportId }))
-=======
-    addLog(`Loading report data: ${props.reportId}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     
     // Get report info
     const reportRes = await getReport(props.reportId)
@@ -1056,11 +885,7 @@ const loadReportData = async () => {
       await loadAgentLogs()
     }
   } catch (err) {
-<<<<<<< HEAD
     addLog(t('log.loadReportFailed', { error: err.message }))
-=======
-    addLog(`Failed to load report: ${err.message}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
 }
 
@@ -1082,17 +907,10 @@ const loadAgentLogs = async () => {
         }
       })
       
-<<<<<<< HEAD
       addLog(t('log.reportDataLoaded'))
     }
   } catch (err) {
     addLog(t('log.loadReportLogFailed', { error: err.message }))
-=======
-      addLog('Report data loaded')
-    }
-  } catch (err) {
-    addLog(`Failed to load report logs: ${err.message}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
 }
 
@@ -1103,17 +921,10 @@ const loadProfiles = async () => {
     const res = await getSimulationProfilesRealtime(props.simulationId, 'reddit')
     if (res.success && res.data) {
       profiles.value = res.data.profiles || []
-<<<<<<< HEAD
       addLog(t('log.loadedProfiles', { count: profiles.value.length }))
     }
   } catch (err) {
     addLog(t('log.loadProfilesFailed', { error: err.message }))
-=======
-      addLog(`Loaded ${profiles.value.length} simulation individuals`)
-    }
-  } catch (err) {
-    addLog(`Failed to load simulation individuals: ${err.message}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   }
 }
 
@@ -1127,11 +938,7 @@ const handleClickOutside = (e) => {
 
 // Lifecycle
 onMounted(() => {
-<<<<<<< HEAD
   addLog(t('log.step5Init'))
-=======
-  addLog('Step5 Deep Interaction initialized')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   loadReportData()
   loadProfiles()
   document.addEventListener('click', handleClickOutside)

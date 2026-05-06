@@ -4,19 +4,11 @@
       <span class="panel-title">{{ $t('graph.panelTitle') }}</span>
       <!-- 顶部工具栏 (Internal Top Right) -->
       <div class="header-tools">
-<<<<<<< HEAD
         <button class="tool-btn" @click="$emit('refresh')" :disabled="loading" :title="$t('graph.refreshGraph')">
           <span class="icon-refresh" :class="{ 'spinning': loading }">↻</span>
           <span class="btn-text">Refresh</span>
         </button>
         <button class="tool-btn" @click="$emit('toggle-maximize')" :title="$t('graph.toggleMaximize')">
-=======
-        <button class="tool-btn" @click="$emit('refresh')" :disabled="loading" title="Refresh Graph">
-          <span class="icon-refresh" :class="{ 'spinning': loading }">↻</span>
-          <span class="btn-text">Refresh</span>
-        </button>
-        <button class="tool-btn" @click="$emit('toggle-maximize')" title="Maximize / Restore">
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           <span class="icon-maximize">⛶</span>
         </button>
       </div>
@@ -35,11 +27,7 @@
               <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-4.04z" />
             </svg>
           </div>
-<<<<<<< HEAD
           {{ isSimulating ? $t('graph.graphMemoryRealtime') : $t('graph.realtimeUpdating') }}
-=======
-          {{ isSimulating ? 'GraphRAG memory updating in real-time' : 'Updating in real-time...' }}
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         </div>
         
         <!-- 模拟结束后的提示 -->
@@ -51,13 +39,8 @@
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
           </div>
-<<<<<<< HEAD
           <span class="hint-text">{{ $t('graph.pendingContentHint') }}</span>
           <button class="hint-close-btn" @click="dismissFinishedHint" :title="$t('graph.closeHint')">
-=======
-          <span class="hint-text">Some content still processing — try refreshing the graph later.</span>
-          <button class="hint-close-btn" @click="dismissFinishedHint" title="Dismiss">
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -220,21 +203,13 @@
       <!-- 加载状态 -->
       <div v-else-if="loading" class="graph-state">
         <div class="loading-spinner"></div>
-<<<<<<< HEAD
         <p>{{ $t('graph.graphDataLoading') }}</p>
-=======
-        <p>Loading graph data...</p>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       </div>
       
       <!-- 等待/空状态 -->
       <div v-else class="graph-state">
         <div class="empty-icon">❖</div>
-<<<<<<< HEAD
         <p class="empty-text">{{ $t('graph.waitingOntology') }}</p>
-=======
-        <p class="empty-text">Waiting for ontology...</p>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       </div>
     </div>
 

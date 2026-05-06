@@ -97,11 +97,7 @@
           @click="handleNextStep"
         >
           <span v-if="isGeneratingReport" class="loading-spinner-small"></span>
-<<<<<<< HEAD
           {{ isGeneratingReport ? $t('step3.generatingReportBtn') : $t('step3.startGenerateReportBtn') }}
-=======
-          {{ isGeneratingReport ? 'Launching...' : 'Generate Result Report' }}
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           <span v-if="!isGeneratingReport" class="arrow-icon">→</span>
         </button>
       </div>
@@ -386,11 +382,7 @@ const resetAllState = () => {
 // 启动模拟
 const doStartSimulation = async () => {
   if (!props.simulationId) {
-<<<<<<< HEAD
     addLog(t('log.errorMissingSimId'))
-=======
-    addLog('Error: missing simulationId')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     return
   }
 
@@ -399,11 +391,7 @@ const doStartSimulation = async () => {
 
   isStarting.value = true
   startError.value = null
-<<<<<<< HEAD
   addLog(t('log.startingDualSim'))
-=======
-  addLog('Starting dual-platform parallel simulation...')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   emit('update-status', 'processing')
 
   try {
@@ -416,32 +404,18 @@ const doStartSimulation = async () => {
 
     if (props.maxRounds) {
       params.max_rounds = props.maxRounds
-<<<<<<< HEAD
       addLog(t('log.setMaxRounds', { rounds: props.maxRounds }))
     }
     
     addLog(t('log.graphMemoryUpdateEnabled'))
     
-=======
-      addLog(`Max rounds set: ${props.maxRounds}`)
-    }
-
-    addLog('Dynamic graph memory update mode enabled')
-
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     const res = await startSimulation(params)
 
     if (res.success && res.data) {
       if (res.data.force_restarted) {
-<<<<<<< HEAD
         addLog(t('log.oldSimCleared'))
       }
       addLog(t('log.engineStarted'))
-=======
-        addLog('✓ Previous simulation logs cleared, restarting')
-      }
-      addLog('✓ Simulation engine started')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       addLog(`  ├─ PID: ${res.data.process_pid || '-'}`)
       
       phase.value = 1
@@ -450,22 +424,13 @@ const doStartSimulation = async () => {
       startStatusPolling()
       startDetailPolling()
     } else {
-<<<<<<< HEAD
       startError.value = res.error || '启动失败'
       addLog(t('log.startFailed', { error: res.error || t('common.unknownError') }))
-=======
-      startError.value = res.error || 'Failed to start'
-      addLog(`✗ Start failed: ${res.error || 'Unknown error'}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       emit('update-status', 'error')
     }
   } catch (err) {
     startError.value = err.message
-<<<<<<< HEAD
     addLog(t('log.startException', { error: err.message }))
-=======
-    addLog(`✗ Start error: ${err.message}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     emit('update-status', 'error')
   } finally {
     isStarting.value = false
@@ -477,37 +442,21 @@ const handleStopSimulation = async () => {
   if (!props.simulationId) return
   
   isStopping.value = true
-<<<<<<< HEAD
   addLog(t('log.stoppingSim'))
   
-=======
-  addLog('Stopping simulation...')
-
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   try {
     const res = await stopSimulation({ simulation_id: props.simulationId })
 
     if (res.success) {
-<<<<<<< HEAD
       addLog(t('log.simStoppedSuccess'))
-=======
-      addLog('✓ Simulation stopped')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
       phase.value = 2
       stopPolling()
       emit('update-status', 'completed')
     } else {
-<<<<<<< HEAD
       addLog(t('log.stopFailed', { error: res.error || t('common.unknownError') }))
     }
   } catch (err) {
     addLog(t('log.stopException', { error: err.message }))
-=======
-      addLog(`Stop failed: ${res.error || 'Unknown error'}`)
-    }
-  } catch (err) {
-    addLog(`Stop error: ${err.message}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   } finally {
     isStopping.value = false
   }
@@ -571,15 +520,9 @@ const fetchRunStatus = async () => {
       
       if (isCompleted || platformsCompleted) {
         if (platformsCompleted && !isCompleted) {
-<<<<<<< HEAD
           addLog(t('log.allPlatformsCompleted'))
         }
         addLog(t('log.simCompleted'))
-=======
-          addLog('✓ All platform simulations detected as complete')
-        }
-        addLog('✓ Simulation complete')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
         phase.value = 2
         stopPolling()
         emit('update-status', 'completed')
@@ -700,29 +643,17 @@ const formatActionTime = (timestamp) => {
 
 const handleNextStep = async () => {
   if (!props.simulationId) {
-<<<<<<< HEAD
     addLog(t('log.errorMissingSimId'))
-=======
-    addLog('Error: missing simulationId')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     return
   }
 
   if (isGeneratingReport.value) {
-<<<<<<< HEAD
     addLog(t('log.reportRequestSent'))
-=======
-    addLog('Report generation request already sent, please wait...')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     return
   }
 
   isGeneratingReport.value = true
-<<<<<<< HEAD
   addLog(t('log.startingReportGen'))
-=======
-  addLog('Starting report generation...')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   
   try {
     const res = await generateReport({
@@ -732,7 +663,6 @@ const handleNextStep = async () => {
     
     if (res.success && res.data) {
       const reportId = res.data.report_id
-<<<<<<< HEAD
       addLog(t('log.reportGenTaskStarted', { reportId }))
       
       // 跳转到报告页面
@@ -743,18 +673,6 @@ const handleNextStep = async () => {
     }
   } catch (err) {
     addLog(t('log.reportGenException', { error: err.message }))
-=======
-      addLog(`✓ Report generation started: ${reportId}`)
-
-      // 跳转到报告页面
-      router.push({ name: 'Report', params: { reportId } })
-    } else {
-      addLog(`✗ Failed to start report generation: ${res.error || 'Unknown error'}`)
-      isGeneratingReport.value = false
-    }
-  } catch (err) {
-    addLog(`✗ Report generation error: ${err.message}`)
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
     isGeneratingReport.value = false
   }
 }
@@ -770,11 +688,7 @@ watch(() => props.systemLogs?.length, () => {
 })
 
 onMounted(() => {
-<<<<<<< HEAD
   addLog(t('log.step3Init'))
-=======
-  addLog('Step3 simulation initialized')
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
   if (props.simulationId) {
     doStartSimulation()
   }

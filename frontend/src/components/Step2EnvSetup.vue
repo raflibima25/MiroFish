@@ -6,30 +6,18 @@
         <div class="card-header">
           <div class="step-info">
             <span class="step-num">01</span>
-<<<<<<< HEAD
             <span class="step-title">{{ $t('step2.simInstanceInit') }}</span>
           </div>
           <div class="step-status">
             <span v-if="phase > 0" class="badge success">{{ $t('common.completed') }}</span>
             <span v-else class="badge processing">{{ $t('step2.initializing') }}</span>
-=======
-            <span class="step-title">Simulation Instance Init</span>
-          </div>
-          <div class="step-status">
-            <span v-if="phase > 0" class="badge success">Completed</span>
-            <span v-else class="badge processing">Initializing</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
         
         <div class="card-content">
           <p class="api-note">POST /api/simulation/create</p>
           <p class="description">
-<<<<<<< HEAD
             {{ $t('step2.simInstanceDesc') }}
-=======
-            Create a new simulation instance and fetch world parameter templates.
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </p>
 
           <div v-if="simulationId" class="info-card">
@@ -47,11 +35,7 @@
             </div>
             <div class="info-row">
               <span class="info-label">Task ID</span>
-<<<<<<< HEAD
               <span class="info-value mono">{{ taskId || $t('step2.asyncTaskDone') }}</span>
-=======
-              <span class="info-value mono">{{ taskId || 'Async task completed' }}</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
           </div>
         </div>
@@ -62,39 +46,25 @@
         <div class="card-header">
           <div class="step-info">
             <span class="step-num">02</span>
-<<<<<<< HEAD
             <span class="step-title">{{ $t('step2.generateAgentPersona') }}</span>
           </div>
           <div class="step-status">
             <span v-if="phase > 1" class="badge success">{{ $t('common.completed') }}</span>
             <span v-else-if="phase === 1" class="badge processing">{{ prepareProgress }}%</span>
             <span v-else class="badge pending">{{ $t('common.pending') }}</span>
-=======
-            <span class="step-title">Generate Agent Profiles</span>
-          </div>
-          <div class="step-status">
-            <span v-if="phase > 1" class="badge success">Completed</span>
-            <span v-else-if="phase === 1" class="badge processing">{{ prepareProgress }}%</span>
-            <span v-else class="badge pending">Pending</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
 
         <div class="card-content">
           <p class="api-note">POST /api/simulation/prepare</p>
           <p class="description">
-<<<<<<< HEAD
             {{ $t('step2.generateAgentPersonaDesc') }}
-=======
-            Automatically extracts entities and relations from the knowledge graph, initializes simulation individuals, and assigns unique behaviors and memories based on reality seeds.
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </p>
 
           <!-- Profiles Stats -->
           <div v-if="profiles.length > 0" class="stats-grid">
             <div class="stat-card">
               <span class="stat-value">{{ profiles.length }}</span>
-<<<<<<< HEAD
               <span class="stat-label">{{ $t('step2.currentAgentCount') }}</span>
             </div>
             <div class="stat-card">
@@ -104,28 +74,13 @@
             <div class="stat-card">
               <span class="stat-value">{{ totalTopicsCount }}</span>
               <span class="stat-label">{{ $t('step2.relatedTopicsCount') }}</span>
-=======
-              <span class="stat-label">Current Agents</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-value">{{ expectedTotal || '-' }}</span>
-              <span class="stat-label">Expected Total</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-value">{{ totalTopicsCount }}</span>
-              <span class="stat-label">Seed Topics</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
           </div>
 
           <!-- Profiles List Preview -->
           <div v-if="profiles.length > 0" class="profiles-preview">
             <div class="preview-header">
-<<<<<<< HEAD
               <span class="preview-title">{{ $t('step2.generatedAgentPersonas') }}</span>
-=======
-              <span class="preview-title">Generated Agent Profiles</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </div>
             <div class="profiles-list">
               <div 
@@ -139,15 +94,9 @@
                   <span class="profile-username">@{{ profile.name || `agent_${idx}` }}</span>
                 </div>
                 <div class="profile-meta">
-<<<<<<< HEAD
                   <span class="profile-profession">{{ profile.profession || $t('step2.unknownProfession') }}</span>
                 </div>
                 <p class="profile-bio">{{ profile.bio || $t('step2.noBio') }}</p>
-=======
-                  <span class="profile-profession">{{ profile.profession || 'Unknown profession' }}</span>
-                </div>
-                <p class="profile-bio">{{ profile.bio || 'No bio available' }}</p>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                 <div v-if="profile.interested_topics?.length" class="profile-topics">
                   <span 
                     v-for="topic in profile.interested_topics.slice(0, 3)" 
@@ -169,32 +118,19 @@
         <div class="card-header">
           <div class="step-info">
             <span class="step-num">03</span>
-<<<<<<< HEAD
             <span class="step-title">{{ $t('step2.dualPlatformConfig') }}</span>
           </div>
           <div class="step-status">
             <span v-if="phase > 2" class="badge success">{{ $t('common.completed') }}</span>
             <span v-else-if="phase === 2" class="badge processing">{{ $t('step2.generating') }}</span>
             <span v-else class="badge pending">{{ $t('common.pending') }}</span>
-=======
-            <span class="step-title">Generate Dual-Platform Config</span>
-          </div>
-          <div class="step-status">
-            <span v-if="phase > 2" class="badge success">Completed</span>
-            <span v-else-if="phase === 2" class="badge processing">Generating</span>
-            <span v-else class="badge pending">Pending</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
 
         <div class="card-content">
           <p class="api-note">POST /api/simulation/prepare</p>
           <p class="description">
-<<<<<<< HEAD
             {{ $t('step2.dualPlatformConfigDesc') }}
-=======
-            LLM intelligently configures world time flow, recommendation algorithms, active time windows, posting frequency, event triggers, and other parameters based on simulation requirements.
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </p>
           
           <!-- Config Preview -->
@@ -203,7 +139,6 @@
             <div class="config-block">
               <div class="config-grid">
                 <div class="config-item">
-<<<<<<< HEAD
                   <span class="config-item-label">{{ $t('step2.simulationDuration') }}</span>
                   <span class="config-item-value">{{ simulationConfig.time_config?.total_simulation_hours || '-' }} {{ $t('common.hours') }}</span>
                 </div>
@@ -217,58 +152,27 @@
                 </div>
                 <div class="config-item">
                   <span class="config-item-label">{{ $t('step2.activePerHour') }}</span>
-=======
-                  <span class="config-item-label">Sim Duration</span>
-                  <span class="config-item-value">{{ simulationConfig.time_config?.total_simulation_hours || '-' }} hrs</span>
-                </div>
-                <div class="config-item">
-                  <span class="config-item-label">Round Length</span>
-                  <span class="config-item-value">{{ simulationConfig.time_config?.minutes_per_round || '-' }} min</span>
-                </div>
-                <div class="config-item">
-                  <span class="config-item-label">Total Rounds</span>
-                  <span class="config-item-value">{{ Math.floor((simulationConfig.time_config?.total_simulation_hours * 60 / simulationConfig.time_config?.minutes_per_round)) || '-' }}</span>
-                </div>
-                <div class="config-item">
-                  <span class="config-item-label">Active/Hour</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   <span class="config-item-value">{{ simulationConfig.time_config?.agents_per_hour_min }}-{{ simulationConfig.time_config?.agents_per_hour_max }}</span>
                 </div>
               </div>
               <div class="time-periods">
                 <div class="period-item">
-<<<<<<< HEAD
                   <span class="period-label">{{ $t('step2.peakHours') }}</span>
-=======
-                  <span class="period-label">Peak Hours</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   <span class="period-hours">{{ simulationConfig.time_config?.peak_hours?.join(':00, ') }}:00</span>
                   <span class="period-multiplier">×{{ simulationConfig.time_config?.peak_activity_multiplier }}</span>
                 </div>
                 <div class="period-item">
-<<<<<<< HEAD
                   <span class="period-label">{{ $t('step2.workHours') }}</span>
-=======
-                  <span class="period-label">Work Hours</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   <span class="period-hours">{{ simulationConfig.time_config?.work_hours?.[0] }}:00-{{ simulationConfig.time_config?.work_hours?.slice(-1)[0] }}:00</span>
                   <span class="period-multiplier">×{{ simulationConfig.time_config?.work_activity_multiplier }}</span>
                 </div>
                 <div class="period-item">
-<<<<<<< HEAD
                   <span class="period-label">{{ $t('step2.morningHours') }}</span>
-=======
-                  <span class="period-label">Morning Hours</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   <span class="period-hours">{{ simulationConfig.time_config?.morning_hours?.[0] }}:00-{{ simulationConfig.time_config?.morning_hours?.slice(-1)[0] }}:00</span>
                   <span class="period-multiplier">×{{ simulationConfig.time_config?.morning_activity_multiplier }}</span>
                 </div>
                 <div class="period-item">
-<<<<<<< HEAD
                   <span class="period-label">{{ $t('step2.offPeakHours') }}</span>
-=======
-                  <span class="period-label">Off-Peak Hours</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   <span class="period-hours">{{ simulationConfig.time_config?.off_peak_hours?.[0] }}:00-{{ simulationConfig.time_config?.off_peak_hours?.slice(-1)[0] }}:00</span>
                   <span class="period-multiplier">×{{ simulationConfig.time_config?.off_peak_activity_multiplier }}</span>
                 </div>
@@ -278,13 +182,8 @@
             <!-- Agent 配置 -->
             <div class="config-block">
               <div class="config-block-header">
-<<<<<<< HEAD
                 <span class="config-block-title">{{ $t('step2.agentConfig') }}</span>
                 <span class="config-block-badge">{{ simulationConfig.agent_configs?.length || 0 }} {{ $t('common.items') }}</span>
-=======
-                <span class="config-block-title">Agent Configuration</span>
-                <span class="config-block-badge">{{ simulationConfig.agent_configs?.length || 0 }}</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               <div class="agents-cards">
                 <div 
@@ -306,11 +205,7 @@
                   
                   <!-- Active Timeline -->
                   <div class="agent-timeline">
-<<<<<<< HEAD
                     <span class="timeline-label">{{ $t('step2.activeTimePeriod') }}</span>
-=======
-                    <span class="timeline-label">Active Hours</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                     <div class="mini-timeline">
                       <div 
                         v-for="hour in 24" 
@@ -333,7 +228,6 @@
                   <div class="agent-params">
                     <div class="param-group">
                       <div class="param-item">
-<<<<<<< HEAD
                         <span class="param-label">{{ $t('step2.postsPerHour') }}</span>
                         <span class="param-value">{{ agent.posts_per_hour }}</span>
                       </div>
@@ -343,48 +237,25 @@
                       </div>
                       <div class="param-item">
                         <span class="param-label">{{ $t('step2.responseDelay') }}</span>
-=======
-                        <span class="param-label">Posts/hr</span>
-                        <span class="param-value">{{ agent.posts_per_hour }}</span>
-                      </div>
-                      <div class="param-item">
-                        <span class="param-label">Comments/hr</span>
-                        <span class="param-value">{{ agent.comments_per_hour }}</span>
-                      </div>
-                      <div class="param-item">
-                        <span class="param-label">Response Delay</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                         <span class="param-value">{{ agent.response_delay_min }}-{{ agent.response_delay_max }}min</span>
                       </div>
                     </div>
                     <div class="param-group">
                       <div class="param-item">
-<<<<<<< HEAD
                         <span class="param-label">{{ $t('step2.activityLevel') }}</span>
-=======
-                        <span class="param-label">Activity</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                         <span class="param-value with-bar">
                           <span class="mini-bar" :style="{ width: (agent.activity_level * 100) + '%' }"></span>
                           {{ (agent.activity_level * 100).toFixed(0) }}%
                         </span>
                       </div>
                       <div class="param-item">
-<<<<<<< HEAD
                         <span class="param-label">{{ $t('step2.sentimentBias') }}</span>
-=======
-                        <span class="param-label">Sentiment</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                         <span class="param-value" :class="agent.sentiment_bias > 0 ? 'positive' : agent.sentiment_bias < 0 ? 'negative' : 'neutral'">
                           {{ agent.sentiment_bias > 0 ? '+' : '' }}{{ agent.sentiment_bias?.toFixed(1) }}
                         </span>
                       </div>
                       <div class="param-item">
-<<<<<<< HEAD
                         <span class="param-label">{{ $t('step2.influenceWeight') }}</span>
-=======
-                        <span class="param-label">Influence</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                         <span class="param-value highlight">{{ agent.influence_weight?.toFixed(1) }}</span>
                       </div>
                     </div>
@@ -396,16 +267,11 @@
             <!-- 平台配置 -->
             <div class="config-block">
               <div class="config-block-header">
-<<<<<<< HEAD
                 <span class="config-block-title">{{ $t('step2.recommendAlgoConfig') }}</span>
-=======
-                <span class="config-block-title">Recommendation Algorithm Config</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               <div class="platforms-grid">
                 <div v-if="simulationConfig.twitter_config" class="platform-card">
                   <div class="platform-card-header">
-<<<<<<< HEAD
                     <span class="platform-name">{{ $t('step2.platform1Name') }}</span>
                   </div>
                   <div class="platform-params">
@@ -427,36 +293,12 @@
                     </div>
                     <div class="param-row">
                       <span class="param-label">{{ $t('step2.echoChamberStrength') }}</span>
-=======
-                    <span class="platform-name">Platform 1: Info Plaza / Feed</span>
-                  </div>
-                  <div class="platform-params">
-                    <div class="param-row">
-                      <span class="param-label">Recency Weight</span>
-                      <span class="param-value">{{ simulationConfig.twitter_config.recency_weight }}</span>
-                    </div>
-                    <div class="param-row">
-                      <span class="param-label">Popularity Weight</span>
-                      <span class="param-value">{{ simulationConfig.twitter_config.popularity_weight }}</span>
-                    </div>
-                    <div class="param-row">
-                      <span class="param-label">Relevance Weight</span>
-                      <span class="param-value">{{ simulationConfig.twitter_config.relevance_weight }}</span>
-                    </div>
-                    <div class="param-row">
-                      <span class="param-label">Viral Threshold</span>
-                      <span class="param-value">{{ simulationConfig.twitter_config.viral_threshold }}</span>
-                    </div>
-                    <div class="param-row">
-                      <span class="param-label">Echo Chamber</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                       <span class="param-value">{{ simulationConfig.twitter_config.echo_chamber_strength }}</span>
                     </div>
                   </div>
                 </div>
                 <div v-if="simulationConfig.reddit_config" class="platform-card">
                   <div class="platform-card-header">
-<<<<<<< HEAD
                     <span class="platform-name">{{ $t('step2.platform2Name') }}</span>
                   </div>
                   <div class="platform-params">
@@ -478,29 +320,6 @@
                     </div>
                     <div class="param-row">
                       <span class="param-label">{{ $t('step2.echoChamberStrength') }}</span>
-=======
-                    <span class="platform-name">Platform 2: Topic / Community</span>
-                  </div>
-                  <div class="platform-params">
-                    <div class="param-row">
-                      <span class="param-label">Recency Weight</span>
-                      <span class="param-value">{{ simulationConfig.reddit_config.recency_weight }}</span>
-                    </div>
-                    <div class="param-row">
-                      <span class="param-label">Popularity Weight</span>
-                      <span class="param-value">{{ simulationConfig.reddit_config.popularity_weight }}</span>
-                    </div>
-                    <div class="param-row">
-                      <span class="param-label">Relevance Weight</span>
-                      <span class="param-value">{{ simulationConfig.reddit_config.relevance_weight }}</span>
-                    </div>
-                    <div class="param-row">
-                      <span class="param-label">Viral Threshold</span>
-                      <span class="param-value">{{ simulationConfig.reddit_config.viral_threshold }}</span>
-                    </div>
-                    <div class="param-row">
-                      <span class="param-label">Echo Chamber</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                       <span class="param-value">{{ simulationConfig.reddit_config.echo_chamber_strength }}</span>
                     </div>
                   </div>
@@ -511,11 +330,7 @@
             <!-- LLM 配置推理 -->
             <div v-if="simulationConfig.generation_reasoning" class="config-block">
               <div class="config-block-header">
-<<<<<<< HEAD
                 <span class="config-block-title">{{ $t('step2.llmConfigReasoning') }}</span>
-=======
-                <span class="config-block-title">LLM Config Reasoning</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               <div class="reasoning-content">
                 <div 
@@ -536,32 +351,19 @@
         <div class="card-header">
           <div class="step-info">
             <span class="step-num">04</span>
-<<<<<<< HEAD
             <span class="step-title">{{ $t('step2.initialActivation') }}</span>
           </div>
           <div class="step-status">
             <span v-if="phase > 3" class="badge success">{{ $t('common.completed') }}</span>
             <span v-else-if="phase === 3" class="badge processing">{{ $t('step2.orchestrating') }}</span>
             <span v-else class="badge pending">{{ $t('common.pending') }}</span>
-=======
-            <span class="step-title">Initial Activation Sequence</span>
-          </div>
-          <div class="step-status">
-            <span v-if="phase > 3" class="badge success">Completed</span>
-            <span v-else-if="phase === 3" class="badge processing">Orchestrating</span>
-            <span v-else class="badge pending">Pending</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
 
         <div class="card-content">
           <p class="api-note">POST /api/simulation/prepare</p>
           <p class="description">
-<<<<<<< HEAD
             {{ $t('step2.initialActivationDesc') }}
-=======
-            Auto-generates initial activation events and trending topics to guide the starting state of the simulated world.
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </p>
 
           <div v-if="simulationConfig?.event_config" class="orchestration-content">
@@ -578,22 +380,14 @@
                     </linearGradient>
                   </defs>
                 </svg>
-<<<<<<< HEAD
                 {{ $t('step2.narrativeDirection') }}
-=======
-                Narrative Direction
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </span>
               <p class="narrative-text">{{ simulationConfig.event_config.narrative_direction }}</p>
             </div>
 
             <!-- 热点话题 -->
             <div class="topics-section">
-<<<<<<< HEAD
               <span class="box-label">{{ $t('step2.initialHotTopics') }}</span>
-=======
-              <span class="box-label">Initial Hot Topics</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               <div class="hot-topics-grid">
                 <span v-for="topic in simulationConfig.event_config.hot_topics" :key="topic" class="hot-topic-tag">
                   # {{ topic }}
@@ -603,11 +397,7 @@
 
             <!-- 初始帖子流 -->
             <div class="initial-posts-section">
-<<<<<<< HEAD
               <span class="box-label">{{ $t('step2.initialActivationSeq', { count: simulationConfig.event_config.initial_posts.length }) }}</span>
-=======
-              <span class="box-label">Initial Activation Sequence ({{ simulationConfig.event_config.initial_posts.length }})</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               <div class="posts-timeline">
                 <div v-for="(post, idx) in simulationConfig.event_config.initial_posts" :key="idx" class="timeline-item">
                   <div class="timeline-marker"></div>
@@ -633,50 +423,29 @@
         <div class="card-header">
           <div class="step-info">
             <span class="step-num">05</span>
-<<<<<<< HEAD
             <span class="step-title">{{ $t('step2.setupComplete') }}</span>
           </div>
           <div class="step-status">
             <span v-if="phase >= 4" class="badge processing">{{ $t('step1.inProgress') }}</span>
             <span v-else class="badge pending">{{ $t('common.pending') }}</span>
-=======
-            <span class="step-title">Setup Complete</span>
-          </div>
-          <div class="step-status">
-            <span v-if="phase >= 4" class="badge processing">In Progress</span>
-            <span v-else class="badge pending">Pending</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
         </div>
 
         <div class="card-content">
           <p class="api-note">POST /api/simulation/start</p>
-<<<<<<< HEAD
           <p class="description">{{ $t('step2.setupCompleteDesc') }}</p>
-=======
-          <p class="description">Simulation environment is ready. You can now start the simulation.</p>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           
           <!-- 模拟轮数配置 - 只有在配置生成完成且轮数计算出来后才显示 -->
           <div v-if="simulationConfig && autoGeneratedRounds" class="rounds-config-section">
             <div class="rounds-header">
               <div class="header-left">
-<<<<<<< HEAD
                 <span class="section-title">{{ $t('step2.roundsConfig') }}</span>
                 <span class="section-desc">{{ $t('step2.roundsConfigDesc', { hours: simulationConfig?.time_config?.total_simulation_hours || '-', minutesPerRound: simulationConfig?.time_config?.minutes_per_round || '-' }) }}</span>
-=======
-                <span class="section-title">Simulation Rounds</span>
-                <span class="section-desc">MiroFish auto-plans <span class="desc-highlight">{{ simulationConfig?.time_config?.total_simulation_hours || '-' }}</span> real-world hours, each round represents <span class="desc-highlight">{{ simulationConfig?.time_config?.minutes_per_round || '-' }}</span> minutes of elapsed time</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
               <label class="switch-control">
                 <input type="checkbox" v-model="useCustomRounds">
                 <span class="switch-track"></span>
-<<<<<<< HEAD
                 <span class="switch-label">{{ $t('step2.customToggle') }}</span>
-=======
-                <span class="switch-label">Custom</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </label>
             </div>
             
@@ -685,17 +454,10 @@
                 <div class="slider-display">
                   <div class="slider-main-value">
                     <span class="val-num">{{ customMaxRounds }}</span>
-<<<<<<< HEAD
                     <span class="val-unit">{{ $t('step2.roundsUnit') }}</span>
                   </div>
                   <div class="slider-meta-info">
                     <span>{{ $t('step2.estimatedDuration', { minutes: Math.round(customMaxRounds * 0.6) }) }}</span>
-=======
-                    <span class="val-unit">rounds</span>
-                  </div>
-                  <div class="slider-meta-info">
-                    <span>With 100 agents: ~{{ Math.round(customMaxRounds * 0.6) }} min estimated</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                 </div>
 
@@ -716,11 +478,7 @@
                       :class="{ active: customMaxRounds === 40 }"
                       @click="customMaxRounds = 40"
                       :style="{ position: 'absolute', left: `calc(${(40 - 10) / (autoGeneratedRounds - 10) * 100}% - 30px)` }"
-<<<<<<< HEAD
                     >{{ $t('step2.recommendedRounds', { rounds: 40 }) }}</span>
-=======
-                    >40 (Recommended)</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                     <span>{{ autoGeneratedRounds }}</span>
                   </div>
                 </div>
@@ -730,11 +488,7 @@
                 <div class="auto-info-card">
                   <div class="auto-value">
                     <span class="val-num">{{ autoGeneratedRounds }}</span>
-<<<<<<< HEAD
                     <span class="val-unit">{{ $t('step2.roundsUnit') }}</span>
-=======
-                    <span class="val-unit">rounds</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                   </div>
                   <div class="auto-content">
                     <div class="auto-meta-row">
@@ -743,19 +497,11 @@
                           <circle cx="12" cy="12" r="10"></circle>
                           <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
-<<<<<<< HEAD
                         {{ $t('step2.estimatedDurationFull', { minutes: Math.round(autoGeneratedRounds * 0.6) }) }}
                       </span>
                     </div>
                     <div class="auto-desc">
                       <p class="highlight-tip" @click="useCustomRounds = true">{{ $t('step2.customTip') }} ➝</p>
-=======
-                        With 100 agents: ~{{ Math.round(autoGeneratedRounds * 0.6) }} min estimated
-                      </span>
-                    </div>
-                    <div class="auto-desc">
-                      <p class="highlight-tip" @click="useCustomRounds = true">First run? Strongly recommended to switch to ‘Custom’ mode and reduce rounds for a quick preview and lower error risk ➝</p>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
                     </div>
                   </div>
                 </div>
@@ -768,22 +514,14 @@
               class="action-btn secondary"
               @click="$emit('go-back')"
             >
-<<<<<<< HEAD
               ← {{ $t('step2.backToGraphBuild') }}
-=======
-              ← Back to Graph Build
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </button>
             <button
               class="action-btn primary"
               :disabled="phase < 4"
               @click="handleStartSimulation"
             >
-<<<<<<< HEAD
               {{ $t('step2.startDualWorldSim') }} ➝
-=======
-              Start Dual-World Parallel Simulation ➝
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             </button>
           </div>
         </div>
@@ -809,7 +547,6 @@
           <!-- 基本信息 -->
           <div class="modal-info-grid">
             <div class="info-item">
-<<<<<<< HEAD
               <span class="info-label">{{ $t('step2.profileModalAge') }}</span>
               <span class="info-value">{{ selectedProfile.age || '-' }} {{ $t('step2.yearsOld') }}</span>
             </div>
@@ -823,43 +560,19 @@
             </div>
             <div class="info-item">
               <span class="info-label">{{ $t('step2.profileModalMbti') }}</span>
-=======
-              <span class="info-label">Event Age</span>
-              <span class="info-value">{{ selectedProfile.age || '-' }} yrs</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Event Gender</span>
-              <span class="info-value">{{ { male: 'Male', female: 'Female', other: 'Other' }[selectedProfile.gender] || selectedProfile.gender }}</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Country/Region</span>
-              <span class="info-value">{{ selectedProfile.country || '-' }}</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Event MBTI</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               <span class="info-value mbti">{{ selectedProfile.mbti || '-' }}</span>
             </div>
           </div>
 
           <!-- 简介 -->
           <div class="modal-section">
-<<<<<<< HEAD
             <span class="section-label">{{ $t('step2.profileModalBio') }}</span>
             <p class="section-bio">{{ selectedProfile.bio || $t('step2.noBio') }}</p>
-=======
-            <span class="section-label">Bio</span>
-            <p class="section-bio">{{ selectedProfile.bio || 'No bio available' }}</p>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
           </div>
 
           <!-- 关注话题 -->
           <div class="modal-section" v-if="selectedProfile.interested_topics?.length">
-<<<<<<< HEAD
             <span class="section-label">{{ $t('step2.profileModalTopics') }}</span>
-=======
-            <span class="section-label">Seed-Related Topics</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
             <div class="topics-grid">
               <span 
                 v-for="topic in selectedProfile.interested_topics" 
@@ -871,7 +584,6 @@
 
           <!-- 详细人设 -->
           <div class="modal-section" v-if="selectedProfile.persona">
-<<<<<<< HEAD
             <span class="section-label">{{ $t('step2.profileModalPersona') }}</span>
             
             <!-- 人设维度概览 -->
@@ -891,27 +603,6 @@
               <div class="dimension-card">
                 <span class="dim-title">{{ $t('step2.personaDimSocial') }}</span>
                 <span class="dim-desc">{{ $t('step2.personaDimSocialDesc') }}</span>
-=======
-            <span class="section-label">Detailed Persona Background</span>
-
-            <!-- Persona Dimension Overview -->
-            <div class="persona-dimensions">
-              <div class="dimension-card">
-                <span class="dim-title">Event Experience</span>
-                <span class="dim-desc">Full behavioral trajectory in this event</span>
-              </div>
-              <div class="dimension-card">
-                <span class="dim-title">Behavior Profile</span>
-                <span class="dim-desc">Experience summary and style preferences</span>
-              </div>
-              <div class="dimension-card">
-                <span class="dim-title">Memory Imprints</span>
-                <span class="dim-desc">Memories formed from reality seeds</span>
-              </div>
-              <div class="dimension-card">
-                <span class="dim-title">Social Network</span>
-                <span class="dim-desc">Individual links and interaction graph</span>
->>>>>>> eac5054 (feat(frontend): translate all UI text from Chinese to English)
               </div>
             </div>
 
